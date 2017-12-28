@@ -1,0 +1,190 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">WearLauncher</string>
+
+    <string name="watch_type_sport">运动</string>
+    <string name="watch_type_learn">学习</string>
+    <string name="watch_type_personal">个性</string>
+
+    <string name="watch_main_book">学汉字</string>
+    <string name="watch_main_work">学单词</string>
+
+    <string name="negative_item_bell">响铃方式</string>
+    <string name="negative_item_weather">天气</string>
+    <string name="negative_item_alarm">闹钟</string>
+    <string name="negative_item_setting">设置</string>
+
+    <string name="notification_title">消息提醒</string>
+    <string name="notification_delete">删除</string>
+    <string name="notification_not_msg">没有消息</string>
+
+    <string name="notice_low_power">电量低 请尽快充电</string>
+    <string name="notice_low_power_for_phone">电量低，只能使用电话功能</string>
+
+    <string name="sim_name_mobile">中国移动</string>
+    <string name="sim_name_unicom">中国联通</string>
+    <string name="sim_name_telecom">中国电信</string>
+
+    <string name="instruction_title">Hello !</string>
+    <string name="instruction_content">欢迎使用读书郎智能手表，手表需要获得以下权限：</string>
+    <string name="instruction_li">1. 拨打电话、发送短信\n2. 获取位置信息\n3. 访问网络\n4. 打开、关闭蓝牙</string>
+
+    <string name="weather_template" translatable="false">%s°C %s</string>
+
+    <!-- Dialog button indicating that data connection should be re-enabled. [CHAR LIMIT=28] -->
+    <string name="data_usage_disabled_dialog_enable">Re-enable data</string>
+    <!-- Content description of the phone signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_phone">No phone.</string>
+    <!-- Content description of the phone signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_one_bar">Phone one bar.</string>
+    <!-- Content description of the phone signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_two_bars">Phone two bars.</string>
+    <!-- Content description of the phone signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_three_bars">Phone three bars.</string>
+    <!-- add for signal strength by zhaotong 20160301 start-->
+    <!-- Content description of the phone signal when it is four bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_four_bars">Phone four bars.</string>
+    <!-- add for signal strength by zhaotong 20160301 end-->
+    <!-- Content description of the phone signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_phone_signal_full">Phone signal full.</string>
+
+    <!-- Content description of the data signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_data">No data.</string>
+    <!-- Content description of the data signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_one_bar">Data one bar.</string>
+    <!-- Content description of the data signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_two_bars">Data two bars.</string>
+    <!-- Content description of the data signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_three_bars">Data three bars.</string>
+    <!-- Content description of the data signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_signal_full">Data signal full.</string>
+
+    <!-- Content description of the WIFI signal when WIFI is disabled for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_off">Wifi off.</string>
+    <!-- Content description of the WIFI signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wifi">Wifi disconnected.</string>
+    <!-- Content description of the WIFI signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_one_bar">Wifi one bar.</string>
+    <!-- Content description of the WIFI signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_two_bars">Wifi two bars.</string>
+    <!-- Content description of the WIFI signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_three_bars">Wifi three bars.</string>
+    <!-- Content description of the WIFI signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_signal_full">Wifi signal full.</string>
+
+    <!-- Content description of the wifi label showing what we are connected to. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wifi_name">Connected to <xliff:g example="Home Network" id="wifi">%s</xliff:g>.</string>
+
+    <string name="status_bar_settings_signal_meter_wifi_nossid">Wi-Fi connected</string>
+    <string name="status_bar_settings_signal_meter_disconnected">No Internet connection</string>
+
+    <!-- Separator for PLMN and SPN in network name. -->
+    <string name="status_bar_network_name_separator" translatable="false">|</string>
+    <!-- Content description of the data connection type GPRS for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_gprs">GPRS</string>
+    <!-- Content description of the data connection type Edge for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_edge">Edge</string>
+    <!-- Content description of the data connection type 3G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3g">3G</string>
+    <!-- Content description of the data connection type 3.5G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_3_5g">3.5G</string>
+    <!-- Content description of the data connection type 4G for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_4g">4G</string>
+    <!-- Content description of the data connection type LTE for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_lte">LTE</string>
+    <!-- Content description of the data connection type CDMA for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_cdma">CDMA</string>
+    <!-- Network connection string for Bluetooth Reverse Tethering -->
+    <string name="bluetooth_tethered">Bluetooth tethered</string>
+    <!-- Content description of the bluetooth tethering icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_bluetooth_tether">Bluetooth tethering.</string>
+    <!-- Textual description of Ethernet connections -->
+    <string name="ethernet_label">Ethernet</string>
+    <!-- Content description of the airplane mode icon for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_airplane_mode">Airplane mode.</string>
+
+    <!-- Content description of the WiMAX signal when no signal for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_no_wimax">No WiMAX.</string>
+    <!-- Content description of the WiMAX signal when it is one bar for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_one_bar">WiMAX one bar.</string>
+    <!-- Content description of the WiMAX signal when it is two bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_two_bars">WiMAX two bars.</string>
+    <!-- Content description of the WiMAX signal when it is three bars for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_three_bars">WiMAX three bars.</string>
+    <!-- Content description of the WiMAX signal when it is full for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_wimax_signal_full">WiMAX signal full.</string>
+
+    <string name="battery_level_template"><xliff:g example="45" id="level">%d</xliff:g>%%</string>
+
+    <string name="lockscreen_carrier_default">No service.</string>
+
+    <string name="default_scroll_format">Page %1$d of %2$d</string>
+
+    <string name="title_activity_dual">DualActivity</string>
+
+
+    <string name="now_string_shortest">now</string>
+    <plurals name="duration_minutes_shortest">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>m</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>m</item>
+    </plurals>
+    <plurals name="duration_hours_shortest">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>h</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>h</item>
+    </plurals>
+
+    <!-- Phrase describing a time duration using days that is as short as possible, preferrably one character. If the language needs a space in between the integer and the unit, please also integrate it in the string, but preferably it should not have a space in between.[CHAR LIMIT=6] -->
+    <plurals name="duration_days_shortest">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>d</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>d</item>
+    </plurals>
+
+    <!-- Phrase describing a time duration using years that is as short as possible, preferrably one character. If the language needs a space in between the integer and the unit, please also integrate it in the string, but preferably it should not have a space in between.[CHAR LIMIT=6] -->
+    <plurals name="duration_years_shortest">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g>y</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g>y</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest_future">
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>m</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>m</item>
+    </plurals>
+    <plurals name="duration_hours_shortest_future">
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>h</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>h</item>
+    </plurals>
+
+    <!-- Phrase describing a time duration using days that is as short as possible, preferrably one character. This version should be a future point in time. If the language needs a space in between the integer and the unit, please also integrate it in the string, but preferably it should not have a space in between.[CHAR LIMIT=14] -->
+    <plurals name="duration_days_shortest_future">
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>d</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>d</item>
+    </plurals>
+
+    <!-- Phrase describing a time duration using years that is as short as possible, preferrably one character. This version should be a future point in time. If the language needs a space in between the integer and the unit, please also integrate it in the string, but preferably it should not have a space in between.[CHAR LIMIT=14] -->
+    <plurals name="duration_years_shortest_future">
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g>y</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g>y</item>
+    </plurals>
+    <plurals name="duration_minutes_relative">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> minute ago</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> minutes ago</item>
+    </plurals>
+    <plurals name="duration_minutes_relative_future">
+        <item quantity="one">in <xliff:g example="1" id="count">%d</xliff:g> minute</item>
+        <item quantity="other">in <xliff:g example="2" id="count">%d</xliff:g> minutes</item>
+    </plurals>
+    <plurals name="duration_hours_relative">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> hour ago</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> hours ago</item>
+    </plurals>
+
+    <!-- Phrase describing a relative time using days in the past that is not shown on the screen but used for accessibility. [CHAR LIMIT=NONE] -->
+    <plurals name="duration_days_relative">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> day ago</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> days ago</item>
+    </plurals>
+
+    <!-- Phrase describing a relative time using years in the past that is not shown on the screen but used for accessibility. [CHAR LIMIT=NONE] -->
+    <plurals name="duration_years_relative">
+        <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> year ago</item>
+        <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> years ago</item>
+    </plurals>
+</resources>

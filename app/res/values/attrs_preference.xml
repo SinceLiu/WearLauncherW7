@@ -1,0 +1,16 @@
+<resources>
+
+    <declare-styleable name="Preference">
+        <attr name="pref_key" format="string" />
+        <attr name="pref_icon" format="integer" />
+        <attr name="pref_icon_vis" format="boolean" />
+        <attr name="pref_title" format="string" />
+        <attr name="pref_summary" format="string" />
+        <attr name="pref_activity" format="string" />
+        <attr name="pref_package_name" format="string" />
+        <attr name="pref_defaultValue" format="string" />
+        <attr name="pref_icon_drawable" format="reference" />
+        <attr name="pref_mode_type" format="string"/>
+    </declare-styleable>
+
+</resources>

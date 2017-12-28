@@ -1,0 +1,135 @@
+<resources>
+    <bool name="config_largeHeap">false</bool>
+    <bool name="is_large_screen">false</bool>
+    <bool name="allow_rotation">true</bool>
+
+<!-- DragController -->
+    <integer name="config_flingToDeleteMinVelocity">-1500</integer>
+
+<!-- AllApps/Customize/AppsCustomize -->
+    <!-- The alpha of the AppsCustomize bg in spring loaded mode -->
+    <integer name="config_appsCustomizeSpringLoadedBgAlpha">45</integer>
+    <integer name="config_workspaceUnshrinkTime">300</integer>
+    <!-- Out of 100, the percent to shrink the workspace during spring loaded mode. -->
+    <integer name="config_workspaceSpringLoadShrinkPercentage">60</integer>
+
+    <!-- Fade/zoom in/out duration & scale in the AllApps transition.
+         Note: This should be less than the workspaceShrinkTime as they happen together. -->
+    <integer name="config_appsCustomizeZoomInTime">350</integer>
+    <integer name="config_appsCustomizeZoomOutTime">600</integer>
+    <integer name="config_appsCustomizeZoomScaleFactor">7</integer>
+    <integer name="config_appsCustomizeFadeInTime">250</integer>
+    <integer name="config_appsCustomizeFadeOutTime">200</integer>
+    <integer name="config_appsCustomizeWorkspaceShrinkTime">300</integer>
+    <integer name="config_appsCustomizeWorkspaceAnimationStagger">40</integer>
+    <integer name="config_workspaceAppsCustomizeAnimationStagger">100</integer>
+
+    <!-- Tab transition animation duration -->
+    <integer name="config_tabTransitionDuration">250</integer>
+
+    <!-- The slope, in percent, of the drag movement needed to drag an item out of
+         AppsCustomize (y / x * 100%)  -->
+    <integer name="config_appsCustomizeDragSlopeThreshold">150</integer>
+
+    <!-- Batch loading for loading in LauncherModel -->
+    <integer name="config_allAppsBatchLoadDelay">0</integer>
+    <integer name="config_allAppsBatchSize">0</integer>
+
+<!-- Workspace -->
+    <!-- Whether or not the drop targets drop down as opposed to fade in -->
+    <bool name="config_useDropTargetDownTransition">true</bool>
+    <!-- Whether or not to fade the side pages -->
+    <bool name="config_workspaceFadeAdjacentScreens">false</bool>
+
+    <!-- The transition duration for the background of the drop targets -->
+    <integer name="config_dropTargetBgTransitionDuration">0</integer>
+
+    <!-- The duration (in ms) of the fade animation on the object outlines, used when
+         we are dragging objects around on the home screen. -->
+    <integer name="config_dragOutlineFadeTime">900</integer>
+
+    <!-- The alpha value at which to show the most recent drop visualization outline. -->
+    <integer name="config_dragOutlineMaxAlpha">128</integer>
+
+    <!-- Parameters controlling the animation for when an item is dropped on the home screen,
+         and it animates from its old position to the new one. -->
+    <integer name="config_dropAnimMinDuration">100</integer>
+    <integer name="config_dropAnimMaxDuration">500</integer>
+
+    <!-- The duration of the UserFolder opening and closing animation -->
+    <integer name="config_folderAnimDuration">120</integer>
+
+    <!-- The distance at which the animation should take the max duration -->
+    <integer name="config_dropAnimMaxDist">800</integer>
+
+    <!-- Properties controlling the workspace fade-out during dragging -->
+    <integer name="config_dragFadeOutAlpha">80</integer>
+    <integer name="config_dragFadeOutDuration">250</integer>
+
+    <!-- Camera distance for the overscroll effect -->
+    <integer name="config_cameraDistance">6500</integer>
+
+    <!-- Folder max bounds and max number of items. Note: folder_max_count_x * folder_max_count_y
+         >= folder_max_num_items. When these are set to -1, they are automatically determined. -->
+    <integer name="folder_max_count_x">4</integer>
+    <integer name="folder_max_count_y">4</integer>
+    <integer name="folder_max_num_items">16</integer>
+
+    <integer name="cell_count_x">2</integer>
+    <integer name="cell_count_y">2</integer>
+
+    <!-- Whether or not to use custom clings if a custom workspace layout is passed in -->
+    <bool name="config_useCustomClings">false</bool>
+
+<!-- Hotseat -->
+    <bool name="hotseat_transpose_layout_with_orientation">true</bool>
+    <integer name="hotseat_cell_count">0</integer>
+    <integer name="hotseat_all_apps_index">2</integer>
+    <!-- must be between 0 and 100 -->
+    <integer name="hotseat_item_scale_percentage">100</integer>
+
+<!--  -->    
+
+	<!-- Control whether status bar should distinguish HSPA data icon form UMTS
+    data icon on devices -->
+    <bool name="config_hspa_data_distinguishable">false</bool>
+    
+    <!-- Show phone (voice) signal strength instead of data in mobile RSSI. -->
+    <bool name="config_showPhoneRSSIForData">false</bool>
+
+    <!-- When true, show 1/2G networks as 3G. -->
+    <bool name="config_showMin3G">false</bool>
+
+    <!-- Show rotation lock button in phone-style notification panel. -->
+    <bool name="config_showRotationLock">true</bool>
+    
+    <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
+    <bool name="config_show4GForLTE">true</bool>
+    
+    <!-- Set to true if the RSSI should always display CDMA signal strength even on EVDO -->
+    <bool name="config_alwaysUseCdmaRssi">false</bool>
+    
+    <!-- Set and Unsets WiMAX -->
+    <bool name="config_wimaxEnabled">false</bool>
+
+    <integer name="dial_type_a">0</integer>
+    <integer name="dial_type_b">1</integer>
+    <integer name="dial_type_c">2</integer>
+    <integer name="dial_type_d">3</integer>
+    <integer name="dial_type_e">4</integer>
+    <integer name="dial_type_f">5</integer>
+    <integer name="dial_type_g">6</integer>
+    <integer name="dial_type_h">7</integer>
+    <integer name="dial_type_i">8</integer>
+    <integer name="dial_type_j">9</integer>
+    <integer name="dial_type_k">10</integer>
+    <integer name="dial_type_l">11</integer>
+    <integer name="dial_type_m">12</integer>
+    <integer name="dial_type_n">13</integer>
+    <integer name="dial_type_o">14</integer>
+    <integer name="dial_type_p">15</integer>
+    <integer name="dial_type_q">16</integer>
+
+    <integer name="unread_num_max">99</integer>
+    <string name="unread_num_max_display">99+</string>
+</resources>

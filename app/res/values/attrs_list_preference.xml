@@ -1,0 +1,46 @@
+<resources>
+
+    <declare-styleable name="ListPreference">
+        <attr name="pref_entries" format="string" />
+        <attr name="pref_entryValues" format="string" />
+        <attr name="pref_entryAsSummary" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RadioPreference">
+        <attr name="iconOnImage" format="reference" />
+        <attr name="iconOffImage" format="reference" />
+        <attr name="titleOn" format="string" />
+        <attr name="titleOff" format="string" />
+     />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircledImageView">
+        <attr name="android:src"/>
+        <attr format="color" name="circle_color"/>
+        <attr format="dimension" name="circle_radius"/>
+        <attr format="dimension" name="circle_radius_pressed"/>
+        <attr format="dimension" name="circle_border_width"/>
+        <attr format="color" name="circle_border_color"/>
+        <attr format="dimension" name="circle_padding"/>
+        <attr format="dimension" name="shadow_width"/>
+        <attr format="dimension" name="image_circle_percentage"/>
+        <attr format="dimension" name="image_horizontal_offcenter_percentage"/>
+        <attr format="color" name="image_tint"/>
+        <attr format="fraction" name="circle_radius_percent"/>
+        <attr format="fraction" name="circle_radius_pressed_percent"/>
+        <attr format="enum" name="square_dimen">
+            <enum name="none" value="0"/>
+            <enum name="height" value="1"/>
+            <enum name="width" value="2"/>
+        </attr></declare-styleable>
+
+    <declare-styleable name="ListItemLayout">
+        <attr name="pref_icon_circle_radius_focused" format="dimension" />
+        <attr name="pref_icon_circle_radius" format="dimension" />
+        <attr name="pref_icon_circle_border_width" format="dimension" />
+        <attr name="pref_icon_circle_color_selected" format="color" />
+        <attr name="pref_icon_circle_color" format="color" />
+        <attr name="pref_icon_circle_border_color" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff000000">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10px"
+            android:paddingBottom="18px"
+            android:paddingLeft="16px"
+            android:paddingRight="16px"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24px"
+                android:textColor="@color/white"
+                android:text="@string/instruction_title"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9px"
+                android:lineSpacingExtra="6px"
+                android:gravity="left"
+                android:textSize="20px"
+                android:textColor="@color/white"
+                android:text="@string/instruction_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9px"
+                android:lineSpacingExtra="6px"
+                android:gravity="left"
+                android:textSize="20px"
+                android:textColor="@color/white"
+                android:text="@string/instruction_li"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5px"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cancel_bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_instruction_cancel" />
+
+        <Button
+            android:id="@+id/ok_bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_instruction_agree"/>
+    </LinearLayout>
+
+
+</LinearLayout>

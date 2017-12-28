@@ -1,0 +1,67 @@
+<com.readboy.wearlauncher.view.WatchDialTypeK xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/watch_type_k_black_bg">
+
+    <!--time-->
+    <include
+        layout="@layout/digit_clock_k_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginTop="15px" />
+
+    <TextView
+        android:id="@+id/date_tvid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21px"
+        android:layout_marginTop="64px"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        app:dateTemplate="MM/dd"
+        />
+    <!--dial mms unread-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="168px" >
+        <Button
+            android:id="@+id/btn_id_dialer"
+            android:layout_width="@dimen/dial_a_dialer_width"
+            android:layout_height="@dimen/dial_a_dialer_hight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="8px"
+            android:layout_marginStart="18px"
+            android:enabled="false"
+            android:clickable="false"
+            android:background="@drawable/watch_type_black_a_dialer"/>
+        <TextView
+            android:id="@+id/text_id_dialer_num"
+            style="@style/cornerSignTextView"
+            android:layout_alignRight="@id/btn_id_dialer"
+            android:layout_alignTop="@id/btn_id_dialer"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/btn_id_mms"
+            android:layout_width="@dimen/dial_a_wetalk_width"
+            android:layout_height="@dimen/dial_a_wetalk_hight"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8px"
+            android:layout_marginRight="18px"
+            android:enabled="false"
+            android:clickable="false"
+            android:background="@drawable/watch_type_black_a_wetalk"/>
+        <TextView
+            android:id="@+id/text_id_mss_num"
+            style="@style/cornerSignTextView"
+            android:layout_alignRight="@id/btn_id_mms"
+            android:layout_alignTop="@id/btn_id_mms"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</com.readboy.wearlauncher.view.WatchDialTypeK>

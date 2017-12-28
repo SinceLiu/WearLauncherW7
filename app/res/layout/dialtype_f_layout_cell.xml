@@ -1,0 +1,16 @@
+<com.readboy.wearlauncher.view.WatchDialTypeF
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/watch_type_f_black_bg">
+
+    <com.readboy.wearlauncher.view.AnalogClock
+        android:id="@+id/analog_clock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:analogHour="@drawable/watch_type_f_analog_hour"
+        app:analogMinute="@drawable/watch_type_f_analog_min"
+        app:analogSecond="@drawable/watch_type_f_analog_second"
+        />
+</com.readboy.wearlauncher.view.WatchDialTypeF>

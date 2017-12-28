@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dial_preview_array">
+        <item>@drawable/dial_overview_type_a</item>
+        <item>@drawable/dial_overview_type_b</item>
+        <item>@drawable/dial_overview_type_c</item>
+        <item>@drawable/dial_overview_type_d</item>
+        <item>@drawable/dial_overview_type_e</item>
+        <item>@drawable/dial_overview_type_f</item>
+        <item>@drawable/dial_overview_type_g</item>
+        <item>@drawable/dial_overview_type_h</item>
+        <item>@drawable/dial_overview_type_i</item>
+        <item>@drawable/dial_overview_type_j</item>
+        <item>@drawable/dial_overview_type_k</item>
+    </string-array>
+
+    <string-array name="excludePackageList">
+        <item>com.android.documentsui</item>
+        <item>com.sohu.inputmethod.sogou</item>
+        <!--<item>org.chromium.webview_shell</item>-->
+        <!--<item>com.example.wifitest</item>-->
+        <!--<item>com.qualcomm.qti.watchmessenger</item>-->
+        <!--<item>com.android.calendar</item>-->
+        <!--<item>com.android.deskclock</item>-->
+        <!--<item>com.android.email</item>-->
+        <!--<item>com.android.quicksearchbox</item>-->
+        <!--<item>com.example.wifitest</item>-->
+        <!--<item>com.qualcomm.qti.sensors.qsensortest</item>-->
+        <!--<item>com.qualcomm.qti.sensors.ui.artest</item>-->
+        <!--<item>com.qualcomm.location.qvtester</item>-->
+        <!--<item>com.qualcomm.qct.dlt</item>-->
+        <!--<item>com.qualcomm.qti.app</item>-->
+        <!--<item>com.android.nativeaudiolatency</item>-->
+        <!--<item>com.android.qlogging</item>-->
+    </string-array>
+
+    <string-array name="ableEnterList">
+        <item>com.readboy.wearweather</item>
+        <!--<item>com.android.settings</item>-->
+    </string-array>
+
+    <string-array name="ringer_mode_text">
+        <item>静音</item>
+        <item>仅振动</item>
+        <item>仅铃声</item>
+        <item>响铃加振动</item>
+    </string-array>
+
+    <integer-array name="ringer_mode_integer">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>2</item>
+    </integer-array>
+</resources>

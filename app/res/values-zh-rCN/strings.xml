@@ -1,0 +1,83 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">主界面</string>
+
+    <string name="watch_type_sport" >运动</string>
+    <string name="watch_type_learn" >学习</string>
+    <string name="watch_type_personal" >个性</string>
+
+
+    <string name="accessibility_no_phone" msgid="4894708937052611281">"没有手机信号。"</string>
+    <string name="accessibility_phone_one_bar" msgid="687699278132664115">"手机信号强度为一格。"</string>
+    <string name="accessibility_phone_two_bars" msgid="8384905382804815201">"手机信号强度为两格。"</string>
+    <string name="accessibility_phone_three_bars" msgid="8521904843919971885">"手机信号强度为三格。"</string>
+    <string name="accessibility_phone_signal_full" msgid="6471834868580757898">"手机信号满格。"</string>
+    <string name="accessibility_no_data" msgid="4791966295096867555">"没有数据网络信号。"</string>
+    <string name="accessibility_data_one_bar" msgid="1415625833238273628">"数据信号强度为一格。"</string>
+    <string name="accessibility_data_two_bars" msgid="6166018492360432091">"数据信号强度为两格。"</string>
+    <string name="accessibility_data_three_bars" msgid="9167670452395038520">"数据信号强度为三格。"</string>
+    <string name="accessibility_data_signal_full" msgid="2708384608124519369">"数据信号满格。"</string>
+    <string name="accessibility_wifi_off" msgid="3177380296697933627">"已关闭 WLAN。"</string>
+    <string name="accessibility_no_wifi" msgid="1425476551827924474">"WLAN 连接已断开。"</string>
+    <string name="accessibility_wifi_one_bar" msgid="7735893178010724377">"WLAN 信号强度为一格。"</string>
+    <string name="accessibility_wifi_two_bars" msgid="4994274250497262434">"WLAN 信号强度为两格。"</string>
+    <string name="accessibility_wifi_three_bars" msgid="3495755044276588384">"WLAN 信号强度为三格。"</string>
+    <string name="accessibility_wifi_signal_full" msgid="6853561303586480376">"WLAN 信号满格。"</string>
+
+    <string name="data_usage_disabled_dialog_enable" msgid="7729772039208664606">"重新启用数据连接"</string>
+    <string name="status_bar_settings_signal_meter_disconnected" msgid="1940231521274147771">"未连接互联网"</string>
+
+
+    <string name="now_string_shortest" msgid="8912796667087856402">"现在"</string>
+    <plurals name="duration_minutes_shortest" formatted="false" msgid="3957499975064245495">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 分钟</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 分钟</item>
+    </plurals>
+    <plurals name="duration_hours_shortest" formatted="false" msgid="3552182110578602356">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 小时</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 小时</item>
+    </plurals>
+    <plurals name="duration_days_shortest" formatted="false" msgid="5213655532597081640">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 天</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 天</item>
+    </plurals>
+    <plurals name="duration_years_shortest" formatted="false" msgid="7848711145196397042">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 年</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 年</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest_future" formatted="false" msgid="3277614521231489951">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 分钟后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 分钟后</item>
+    </plurals>
+    <plurals name="duration_hours_shortest_future" formatted="false" msgid="2152452368397489370">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 小时后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 小时后</item>
+    </plurals>
+    <plurals name="duration_days_shortest_future" formatted="false" msgid="8088331502820295701">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 天后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 天后</item>
+    </plurals>
+    <plurals name="duration_years_shortest_future" formatted="false" msgid="2317006667145250301">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 年后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 年后</item>
+    </plurals>
+    <plurals name="duration_minutes_relative" formatted="false" msgid="3178131706192980192">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 分钟前</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 分钟前</item>
+    </plurals>
+    <plurals name="duration_minutes_relative_future" formatted="false" msgid="4655043589817680966">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 分钟后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 分钟后</item>
+    </plurals>
+    <plurals name="duration_hours_relative_future" formatted="false" msgid="8084579714205223891">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 小时后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 小时后</item>
+    </plurals>
+    <plurals name="duration_days_relative_future" formatted="false" msgid="333215369363433992">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 天后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 天后</item>
+    </plurals>
+    <plurals name="duration_years_relative_future" formatted="false" msgid="8644862986413104011">
+        <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 年后</item>
+        <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 年后</item>
+    </plurals>
+</resources>

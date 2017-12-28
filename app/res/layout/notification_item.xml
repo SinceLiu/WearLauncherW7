@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.readboy.wearlauncher.view.NotificationItem
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+    <com.readboy.wearlauncher.Swipe.SwipeLayout
+        android:id="@+id/swipelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_gravity="left|right"
+            android:background="#66ddff00"
+            android:id="@+id/wrapper"
+            android:layout_width="80dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/delete"
+                android:text="@string/notification_delete"
+                android:gravity="center"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.readboy.wearlauncher.notification.DateTimeView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"/>
+        </RelativeLayout>
+    </com.readboy.wearlauncher.Swipe.SwipeLayout>
+</com.readboy.wearlauncher.view.NotificationItem>

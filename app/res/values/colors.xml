@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorCard">#e0e0e0</color>
+    <color name="background_color">#000000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="battery_plugged_color">#00ff00</color>
+
+    <color name="gray">#b2b0b1</color>
+    <color name="gray_dark">#464040</color>
+
+    <color name="black">#000000</color>
+    <color name="black_light">#242424</color>
+    <color name="white">#ffffff</color>
+    <color name="white_50a">#99ffffff</color>
+
+    <color name="battery_level_color">#cccccc</color>
+</resources>

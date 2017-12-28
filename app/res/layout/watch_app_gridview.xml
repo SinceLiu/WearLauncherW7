@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.readboy.wearlauncher.view.WatchAppGridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <!--android:background="@drawable/app_list_bg"-->
+
+    <GridView
+        android:id="@+id/grid_vid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="18px"
+        android:horizontalSpacing="14px"
+        android:stretchMode="columnWidth"
+        android:clipToPadding="false"
+        android:paddingTop="12px"
+        android:paddingBottom="5px"
+        android:paddingLeft="24px"
+        android:paddingRight="24px"
+        android:gravity="center"
+        android:scrollbars="none"
+        android:keycode="KEYCODE_UNKNOWN"
+        android:listSelector="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/class_disable"/>
+
+</com.readboy.wearlauncher.view.WatchAppGridView>

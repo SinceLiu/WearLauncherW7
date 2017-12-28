@@ -1,0 +1,95 @@
+<com.readboy.wearlauncher.view.WatchDialTypeM
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/watch_type_m_black_bg">
+
+    <!--时钟-->
+    <!--<com.readboy.wearlauncher.view.AnalogClock-->
+        <!--android:id="@+id/analog_clock"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:analogSecond="@drawable/watch_type_m_analog_second"-->
+        <!--app:noHour="true"-->
+        <!--app:noMinute="true"-->
+        <!--app:noSecond="false"/>-->
+
+    <!--time-->
+    <include
+        layout="@layout/digit_clock_m_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77px" />
+
+    <!--date view-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50px"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/month_ivid"
+            android:layout_width="@dimen/month_m_width"
+            android:layout_height="@dimen/month_m_hight" />
+        <View
+            android:layout_width="2px"
+            android:layout_height="@dimen/month_m_hight"
+            android:layout_marginLeft="6px"
+            android:layout_marginRight="6px"
+            android:background="@color/white"/>
+        <ImageView
+            android:id="@+id/week_ivid"
+            android:layout_width="@dimen/week_m_width"
+            android:layout_height="@dimen/week_m_hight" />
+    </LinearLayout>
+
+    <!--dial mms unread-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="139px" >
+        <Button
+            android:id="@+id/btn_id_dialer"
+            android:layout_width="@dimen/dial_m_dialer_width"
+            android:layout_height="@dimen/dial_m_dialer_hight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="6px"
+            android:layout_marginStart="56px"
+            android:enabled="false"
+            android:clickable="false"
+            android:background="@drawable/watch_type_black_m_dialer"/>
+        <TextView
+            android:id="@+id/text_id_dialer_num"
+            style="@style/cornerSignTextViewM"
+            android:layout_alignRight="@id/btn_id_dialer"
+            android:layout_alignTop="@id/btn_id_dialer"
+            android:layout_marginRight="-6px"
+            android:layout_marginTop="-6px"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/btn_id_mms"
+            android:layout_width="@dimen/dial_m_wetalk_width"
+            android:layout_height="@dimen/dial_m_wetalk_hight"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6px"
+            android:layout_marginRight="56px"
+            android:enabled="false"
+            android:clickable="false"
+            android:background="@drawable/watch_type_black_m_wetalk"/>
+        <TextView
+            android:id="@+id/text_id_mss_num"
+            style="@style/cornerSignTextViewM"
+            android:layout_alignRight="@id/btn_id_mms"
+            android:layout_alignTop="@id/btn_id_mms"
+            android:layout_marginRight="-6px"
+            android:layout_marginTop="-6px"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+
+</com.readboy.wearlauncher.view.WatchDialTypeM>

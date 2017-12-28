@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.readboy.wearlauncher.view.CornerRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp"
+    android:background="@android:color/transparent">
+
+    <me.dreamheart.autoscalinglayout.ASFrameLayout
+        android:id="@+id/as_lyid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:designWidth="@dimen/dial_design_width"
+        app:designHeight="@dimen/dial_design_height"
+        app:autoScaleEnable="true"
+        app:autoScaleType="fitInside">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+    </me.dreamheart.autoscalinglayout.ASFrameLayout>
+
+</com.readboy.wearlauncher.view.CornerRelativeLayout>

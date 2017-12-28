@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.readboy.wearlauncher.view.SwipeDismissLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe"
+    android:layout_width="240px"
+    android:layout_height="240px"
+    android:layout_gravity="center"
+    android:background="@android:color/black"
+    android:paddingLeft="6px"
+    android:paddingRight="6px">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="44px"
+        android:gravity="center"
+        android:background="@drawable/bg_notification_title"
+        android:text="@string/notification_title"
+        android:textColor="@android:color/white"
+        android:textSize="24px" />
+
+    <com.readboy.recyclerview.swipe.SwipeMenuRecyclerView
+        android:id="@+id/notification_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="14px"
+        android:layout_marginTop="44px" />
+
+    <LinearLayout
+        android:id="@+id/no_data_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="53px"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/no_data_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_no_data" />
+
+        <TextView
+            android:id="@+id/no_msg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="11px"
+            android:text="@string/notification_not_msg"
+            android:textColor="@color/white_50a"
+            android:textSize="20px" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="30px"
+        android:layout_height="4px"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="5px"
+        android:src="@drawable/corner_line" />
+
+</com.readboy.wearlauncher.view.SwipeDismissLayout>

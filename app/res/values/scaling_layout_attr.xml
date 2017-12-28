@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AutoScalingLayout">
+        <attr name="designWidth" format="dimension" />
+        <attr name="designHeight" format="dimension" />
+        <attr name="autoScaleEnable" format="boolean" />
+        <attr name="autoScaleType" format="string" />
+        <attr format="boolean" name="preScaling"/>
+        <!--“fitWidth”，"fitHeigth" 和 "fitInside"-->
+    </declare-styleable>
+</resources>

@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Wallpaper.NoTitleBar.Fullscreen">
+        <item name="android:windowSwipeToDismiss">false</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="NotificationTheme" parent="android:Theme.Material.NoActionBar.Fullscreen" >
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:cacheColorHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Top</item>
+        <item name="android:windowSwipeToDismiss">false</item>
+    </style>
+
+    <style name="Animation"/>
+
+    <style name="Animation.Top">
+        <item name="android:windowEnterAnimation">@anim/activity_enter_top</item>
+        <item name="android:windowExitAnimation">@anim/activity_exit_top</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_exit_top</item>
+    </style>
+
+    <!--数字角标-->
+    <style name="cornerSignTextView">
+        <item name="android:layout_width">@dimen/corner_sign_text_width</item>
+        <item name="android:layout_height">@dimen/corner_sign_text_height</item>
+        <item name="android:background">@drawable/unread_num_bg</item>
+        <item name="android:textSize">@dimen/corner_font_text_size</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginRight">-8px</item>
+        <item name="android:layout_marginTop">-8px</item>
+    </style>
+
+    <!--数字角标-->
+    <style name="cornerSignTextViewM">
+        <item name="android:layout_width">@dimen/corner_sign_m_text_width</item>
+        <item name="android:layout_height">@dimen/corner_sign_m_text_height</item>
+        <item name="android:textSize">@dimen/corner_font_m_text_size</item>
+        <item name="android:background">@drawable/unread_num_m_bg</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--数字角标-->
+    <style name="cornerSignTextView2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/corner_sign_text_height</item>
+        <item name="android:minWidth">@dimen/corner_sign_text_width</item>
+        <item name="android:background">@drawable/corner_sign_text_bg</item>
+        <item name="android:textSize">@dimen/corner_font_text_size</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">@dimen/corner_sign_padding_left</item>
+        <item name="android:paddingRight">@dimen/corner_sign_padding_right</item>
+        <item name="android:paddingTop">@dimen/corner_sign_padding_top</item>
+        <item name="android:paddingBottom">@dimen/corner_sign_padding_bottom</item>
+    </style>
+
+    <style name="modeTypeListTextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/mode_type_list_text_color_selector</item>
+    </style>
+
+    <style name="appListTextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/app_list_text_color_selector</item>
+    </style>
+
+    <style name="dialog_fs">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

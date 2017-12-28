@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    >
+    <item android:drawable="@drawable/battery_plugged_1" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_2" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_3" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_4" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_5" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_6" android:duration="500"></item>
+    <item android:drawable="@drawable/battery_plugged_7" android:duration="500"></item>
+
+    <!--<item android:duration="500">
+        <bitmap
+            android:src="@drawable/battery_nor_1"
+            android:tint="@color/battery_plugged_color"/>
+    </item>
+    <item android:duration="500">
+        <bitmap
+            android:src="@drawable/battery_nor_2"
+            android:tint="@color/battery_plugged_color"/>
+    </item>
+    <item android:duration="500">
+        <bitmap
+            android:src="@drawable/battery_nor_3"
+            android:tint="@color/battery_plugged_color"/>
+    </item>
+    <item android:duration="500">
+        <bitmap
+            android:src="@drawable/battery_nor_4"
+            android:tint="@color/battery_plugged_color"/>
+    </item>-->
+</animation-list>

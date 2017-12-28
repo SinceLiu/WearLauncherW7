@@ -1,0 +1,117 @@
+<resources>
+
+    <!-- The width can be 72dp because we don't have L/R padding -->
+    <dimen name="apps_customize_cell_width">74dp</dimen>
+    <dimen name="apps_customize_cell_height">82dp</dimen>
+    <dimen name="apps_customize_max_gap">18dp</dimen>
+    <dimen name="apps_customize_widget_cell_width_gap">5dp</dimen>
+    <dimen name="apps_customize_widget_cell_height_gap">5dp</dimen>
+
+    <dimen name="workspace_spring_loaded_page_spacing">15dp</dimen>
+    <dimen name="app_icon_size">76px</dimen>
+
+    <!-- dial -->
+    <dimen name="dial_design_width">240px</dimen>
+    <dimen name="dial_design_height">240px</dimen>
+    <!--dial type a-->
+    <dimen name="num_clock_a_width">30px</dimen>
+    <dimen name="num_clock_a_hight">41px</dimen>
+    <dimen name="num_clock_a_dot_width">16px</dimen>
+    <dimen name="num_clock_a_dot_hight">41px</dimen>
+    <dimen name="dial_a_dialer_width">56px</dimen>
+    <dimen name="dial_a_dialer_hight">56px</dimen>
+    <dimen name="dial_a_wetalk_width">56px</dimen>
+    <dimen name="dial_a_wetalk_hight">56px</dimen>
+    <!--dial type b-->
+    <dimen name="num_clock_b_width">34px</dimen>
+    <dimen name="num_clock_b_hight">93px</dimen>
+    <dimen name="dial_b_dialer_width">56px</dimen>
+    <dimen name="dial_b_dialer_hight">56px</dimen>
+    <dimen name="dial_b_wetalk_width">56px</dimen>
+    <dimen name="dial_b_wetalk_hight">56px</dimen>
+    <!--dial type d-->
+    <dimen name="num_clock_d_width">42px</dimen>
+    <dimen name="num_clock_d_hight">60px</dimen>
+    <dimen name="num_clock_d_dot_width">17px</dimen>
+    <dimen name="num_clock_d_dot_hight">60px</dimen>
+    <dimen name="dial_d_dialer_width">120px</dimen>
+    <dimen name="dial_d_dialer_hight">50px</dimen>
+    <!--dial type g-->
+    <dimen name="num_clock_g_width">34px</dimen>
+    <dimen name="num_clock_g_hight">43px</dimen>
+    <dimen name="num_clock_g_dot_width">11px</dimen>
+    <dimen name="num_clock_g_dot_hight">40px</dimen>
+    <!--dial type j-->
+    <dimen name="num_clock_j_width">35px</dimen>
+    <dimen name="num_clock_j_hight">46px</dimen>
+    <dimen name="num_clock_j_dot_width">15px</dimen>
+    <dimen name="num_clock_j_dot_hight">46px</dimen>
+    <!--dial type k-->
+    <dimen name="num_clock_k_width">32px</dimen>
+    <dimen name="num_clock_k_hight">43px</dimen>
+    <dimen name="num_clock_k_dot_width">15px</dimen>
+    <dimen name="num_clock_k_dot_hight">43px</dimen>
+    <!--dial type m-->
+    <dimen name="dial_m_dialer_width">50px</dimen>
+    <dimen name="dial_m_dialer_hight">50px</dimen>
+    <dimen name="dial_m_wetalk_width">50px</dimen>
+    <dimen name="dial_m_wetalk_hight">50px</dimen>
+    <dimen name="num_clock_m_width">26px</dimen>
+    <dimen name="num_clock_m_hight">53px</dimen>
+    <dimen name="num_clock_m_dot_width">12px</dimen>
+    <dimen name="num_clock_m_dot_hight">53px</dimen>
+    <dimen name="month_m_width">28px</dimen>
+    <dimen name="month_m_hight">17px</dimen>
+    <dimen name="week_m_width">28px</dimen>
+    <dimen name="week_m_hight">17px</dimen>
+    <!--dial type n-->
+    <dimen name="num_clock_n_width">33px</dimen>
+    <dimen name="num_clock_n_hight">44px</dimen>
+    <dimen name="num_clock_n_dot_width">18px</dimen>
+    <dimen name="num_clock_n_dot_hight">44px</dimen>
+    <!--dial type o-->
+    <dimen name="num_clock_o_width">43px</dimen>
+    <dimen name="num_clock_o_hight">61px</dimen>
+    <dimen name="num_clock_o_dot_width">22px</dimen>
+    <dimen name="num_clock_o_dot_hight">61px</dimen>
+    <dimen name="dial_o_dialer_width">120px</dimen>
+    <dimen name="dial_o_dialer_hight">50px</dimen>
+
+    <!--list header height-->
+    <dimen name="status_bar_height">44px</dimen>
+    <dimen name="negative_list_item_height">80px</dimen>
+    <dimen name="negative_list_item_spacing">8px</dimen>
+    <dimen name="negative_list_item_title_text_size">24px</dimen>
+    <dimen name="negative_list_item_icon_left">9px</dimen>
+    <dimen name="negative_list_item_text_left">16px</dimen>
+
+    <!-- mode type choice-->
+    <dimen name="mode_type_icon_width">96dp</dimen>
+    <dimen name="mode_type_list_icon_left">20dp</dimen>
+    <dimen name="mode_type_list_text_left">20dp</dimen>
+
+    <!--app list-->
+    <dimen name="app_list_icon_width">76px</dimen>
+    <dimen name="app_list_list_icon_left">20dp</dimen>
+    <dimen name="app_list_list_text_left">20dp</dimen>
+
+    <!--cornerSignTextView-->
+    <dimen name="corner_sign_text_width">28px</dimen>
+    <dimen name="corner_sign_text_height">28px</dimen>
+    <dimen name="corner_font_text_size">18px</dimen>
+    <dimen name="corner_font_text_size_min">14px</dimen>
+    <!--cornerSignTextViewM-->
+    <dimen name="corner_sign_m_text_width">24px</dimen>
+    <dimen name="corner_sign_m_text_height">24px</dimen>
+    <dimen name="corner_font_m_text_size">16px</dimen>
+    <dimen name="corner_font_m_text_size_min">14px</dimen>
+
+
+
+
+    <dimen name="corner_sign_padding_left">1dp</dimen>
+    <dimen name="corner_sign_padding_right">1dp</dimen>
+    <dimen name="corner_sign_padding_top">1dp</dimen>
+    <dimen name="corner_sign_padding_bottom">1dp</dimen>
+
+</resources>

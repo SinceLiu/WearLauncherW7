@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/background_color"
+    android:clipChildren="false">
+
+    <com.readboy.wearlauncher.view.GestureView
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:id="@+id/content_container">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.readboy.wearlauncher.view.GestureView>
+
+    <include layout="@layout/dialtype_o_layout_cell"
+        android:id="@+id/low"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+</FrameLayout>

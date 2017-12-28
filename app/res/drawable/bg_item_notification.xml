@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:height="50px"
+        android:drawable="@drawable/bg_item_notification_layer1" />
+
+    <item
+        android:height="50px"
+        android:drawable="@drawable/bg_item_notification_layer2"
+        android:gravity="bottom" />
+
+    <item
+        android:height="30px"
+        android:drawable="@drawable/bg_item_notification_layer3"
+        android:top="36px" />
+
+</layer-list>

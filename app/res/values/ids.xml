@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text_id_dialer_num" type="id"/>
+    <item name="text_id_mss_num" type="id"/>
+    <item name="btn_id_dialer" type="id"/>
+    <item name="btn_id_mms" type="id"/>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.readboy.wearlauncher.view.DragFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item_notification_parent"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@drawable/bg_item_notification"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/small_icon"
+                android:layout_width="30px"
+                android:layout_height="30px"
+                android:layout_marginLeft="6px"
+                tools:background="@drawable/app_icon_default" />
+
+            <TextView
+                android:id="@+id/content_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8px"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="22px"
+                tools:text="未接来电" />
+
+            <com.readboy.wearlauncher.notification.DateTimeView
+                android:id="@+id/content_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8px"
+                android:textColor="@color/gray"
+                android:textSize="18px"
+                tools:text="09:30" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="36px"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="20px"
+            tools:text="1868888666" />
+    </LinearLayout>
+
+</com.readboy.wearlauncher.view.DragFrameLayout>

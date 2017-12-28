@@ -1,0 +1,90 @@
+<com.readboy.wearlauncher.view.WatchDialTypeD xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="8px"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/date_tvid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="20px"
+            android:textColor="#ffffff"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            >
+            <com.readboy.wearlauncher.battery.BatteryLevelTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20px"/>
+            <com.readboy.wearlauncher.battery.BatteryLevelImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5px"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/hour_tvid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="72px"
+            android:textColor="#43a649"/>
+        <TextView
+            android:id="@+id/nimute_tvid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15px"
+            android:textSize="72px"
+            android:textColor="#6b6602"/>
+    </LinearLayout>
+
+    <!--time-->
+    <include
+        layout="@layout/digit_clock_d_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="66px"/>
+
+    <TextView
+        android:id="@+id/notice_tvid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136px"
+        android:textSize="22px"
+        android:textColor="#138c4b"
+        android:text="@string/notice_low_power"/>
+
+    <Button
+        android:id="@+id/btn_id_dialer"
+        android:layout_width="@dimen/dial_d_dialer_width"
+        android:layout_height="@dimen/dial_d_dialer_hight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="182px"
+        android:enabled="false"
+        android:background="@drawable/watch_type_black_d_dialer"/>
+
+</com.readboy.wearlauncher.view.WatchDialTypeD>

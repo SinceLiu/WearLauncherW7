@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<resources>
+    <!--相机-->
+    <string-array name="app_camera">
+        <item>相机</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--闹钟-->
+    <string-array name="app_alarm">
+        <item>闹钟</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--二维码-->
+    <string-array name="app_qrcode">
+        <item>二维码</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--phone-->
+    <string-array name="app_phone">
+        <item>电话</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--sos-->
+    <string-array name="app_sos">
+        <item>SOS</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--天气-->
+    <string-array name="app_weather">
+        <item>天气</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--心率-->
+    <string-array name="app_heart">
+        <item>心率</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--记步-->
+    <string-array name="app_pedometer">
+        <item>记步</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+    <!--app store-->
+    <string-array name="app_store">
+        <item>商城</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--跑步-->
+    <string-array name="app_run">
+        <item>跑步</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--设置-->
+    <string-array name="app_settings">
+        <item>设置</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--好友-->
+    <string-array name="app_friend">
+        <item>好友</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--微聊-->
+    <string-array name="app_wechat">
+        <item>微聊</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--语音-->
+    <string-array name="app_audio">
+        <item>语音</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--课程表-->
+    <string-array name="app_schedule">
+        <item>课程表</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--上课禁用-->
+    <string-array name="app_class">
+        <item>上课禁用</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--背课文-->
+    <string-array name="app_book">
+        <item>背课文</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+
+    <!--背单词-->
+    <string-array name="app_word">
+        <item>背单词</item>
+        <item>packagename</item>
+        <item>classname</item>
+    </string-array>
+</resources>
