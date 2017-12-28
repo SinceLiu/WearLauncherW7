@@ -5,4 +5,9 @@
     <item name="btn_id_dialer" type="id"/>
     <item name="btn_id_mms" type="id"/>
 
+    <!-- add by divhee start -->
+
+    <item name="launcher_viewpager_pager_postion_id" type="id"/>
+
+    <!-- add by divhee end -->
 </resources>

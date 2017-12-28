@@ -172,6 +172,11 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
                     mHandler.removeMessages(0x10);
                     mHandler.sendEmptyMessageDelayed(0x10,1000*2);
                 }
+                // add by divhee start
+                if (mViewPagerAdpater != null) {
+                    mViewPagerAdpater.setNowPagerNumber(position);
+                }
+                // add by divhee end
             }
 
             @Override
@@ -217,6 +222,11 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
         //requestPermissions(sPermissions);
         forceUpdateDate();
         dialResume();
+		// add by divhee start
+        if (mViewpager != null && mViewpager.getAdapter() != null) {
+            mViewpager.getAdapter().notifyDataSetChanged();
+        }
+		// add by divhee end
     }
 
     @Override
@@ -416,6 +426,9 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
 
     class ViewPagerAdpater extends PagerAdapter {
         public List<View> mViewList;
+        // add by divhee start
+        private int nowPagerNumber = -1;
+        // add by divhee end
 
         public ViewPagerAdpater(List<View> viewList) {
             this.mViewList = viewList;
@@ -447,8 +460,37 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
         public Object instantiateItem(ViewGroup container, int position) {
             // TODO Auto-generated method stub
             container.addView(mViewList.get(position));
+            // add by divhee start
+            mViewList.get(position).setTag(R.id.launcher_viewpager_pager_postion_id, position);
+            // add by divhee end
             return mViewList.get(position);
         }
+
+        // add by divhee start
+        @Override
+        public int getItemPosition(Object object) {
+            if (object != null && object instanceof View) {
+                try {
+                    int objPagerIdx = (Integer)((View)object).getTag(R.id.launcher_viewpager_pager_postion_id);
+                    if (nowPagerNumber == objPagerIdx) {
+                        return POSITION_NONE;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return super.getItemPosition(object);
+        }
+
+        public void setNowPagerNumber(int pagerNumber) {
+            nowPagerNumber = pagerNumber;
+            //Log.e("", "====divhee==setNowPagerNumber=="+nowPagerNumber);
+        }
+
+        public int getNowPagerNumber(){
+            return nowPagerNumber;
+        }
+        // add by divhee end
     }
 
     public Handler mHandler = new Handler(){
