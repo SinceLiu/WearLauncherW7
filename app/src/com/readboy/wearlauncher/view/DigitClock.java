@@ -3,15 +3,12 @@ package com.readboy.wearlauncher.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.readboy.wearlauncher.R;
 
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class DigitClock extends LinearLayout{
 
@@ -302,6 +299,7 @@ public class DigitClock extends LinearLayout{
 	}
 
 	public void setTimeRunning(){
+		removeCallbacks(mClockTick);
 		post(mClockTick);
 	}
 

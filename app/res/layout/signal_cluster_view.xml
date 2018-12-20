@@ -18,90 +18,82 @@
 */
 -->
 
-<com.readboy.wearlauncher.net.SignalClusterView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<com.readboy.wearlauncher.net.SignalClusterView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
+    android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
     <!--mobile-->
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/mobile_combo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        >
-        <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/mobile_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/mobile_inout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/mobile_signal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/network_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/mobile_type"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    />
-                <ImageView
-                    android:id="@+id/mobile_inout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    />
-            </FrameLayout>
-            <ImageView
-                android:id="@+id/mobile_signal"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                />
-            <TextView
-                android:id="@+id/network_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2px"
-                android:textSize="16px"/>
-            <ImageView
-                android:id="@+id/volte_icon"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                />
-            <ImageView
-                android:id="@+id/network_type"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                />
-        </LinearLayout>
-    </FrameLayout>
+            android:layout_marginLeft="2px"
+            android:textSize="16px" />
+
+        <ImageView
+            android:id="@+id/volte_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/network_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <!--Wi-Fi-->
     <FrameLayout
         android:id="@+id/wifi_combo"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         >
+
         <ImageView
             android:id="@+id/wifi_signal"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:scaleType="center"
-            />
+            android:layout_height="wrap_content"
+            android:scaleType="center" />
+
         <ImageView
             android:id="@+id/wifi_inout"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            />
+            android:layout_height="wrap_content" />
     </FrameLayout>
 
     <!--airplane-->
     <ImageView
         android:id="@+id/airplane"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 </com.readboy.wearlauncher.net.SignalClusterView>

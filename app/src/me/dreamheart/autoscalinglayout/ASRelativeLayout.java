@@ -66,8 +66,9 @@ public class ASRelativeLayout extends RelativeLayout implements AutoScaleLayout{
         if (!mASViewGroupUtil.scaleSize(this)) {
             super.draw(canvas);
         }
-        else
+        else {
             this.invalidate();
+        }
     }
 
     @Override

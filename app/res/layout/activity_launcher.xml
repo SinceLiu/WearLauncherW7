@@ -20,4 +20,9 @@
         android:id="@+id/low"
         android:layout_height="match_parent"
         android:layout_width="match_parent"/>
+
+    <include layout="@layout/sim_bind_layout_cell"
+        android:id="@+id/sim_bind"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 </FrameLayout>

@@ -101,6 +101,8 @@ public class WatchAppGridView extends RelativeLayout implements WatchController.
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         mWatchController.addClassDisableChangedCallback(this);
+
+        mGridView.requestFocus();
     }
 
     @Override

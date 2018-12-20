@@ -4,10 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.readboy.wearlauncher.R;
-import com.readboy.wearlauncher.utils.WatchController;
 
 import java.util.Calendar;
 
@@ -146,7 +144,8 @@ public class WatchDialTypeM extends DialBaseLayout{
         setDate();
     }
 
-    private void setDate(){
+    @Override
+    protected void setDate(){
         ImageView monthView = (ImageView) findViewById(R.id.month_ivid);
         ImageView weekView = (ImageView) findViewById(R.id.week_ivid);
         Calendar calendar = Calendar.getInstance();

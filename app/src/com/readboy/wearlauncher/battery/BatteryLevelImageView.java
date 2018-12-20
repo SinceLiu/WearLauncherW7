@@ -37,7 +37,7 @@ public class BatteryLevelImageView extends ImageView implements BatteryControlle
 		public void run() {
 			final int level = updateChargingAnimLevel();
 			setBackgroundResource(0);
-			if(mPluggedIn){
+			if(mPluggedIn&&mCharging){
 				setImageBitmap(createBatteryChargingImage(level));
 			}else {
 				setImageBitmap(createBatteryImage(level));

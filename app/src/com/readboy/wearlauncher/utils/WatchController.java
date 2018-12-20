@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.readboy.wearlauncher.Launcher;
 import com.readboy.wearlauncher.R;
 
 import org.json.JSONArray;
@@ -30,6 +31,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import android.app.readboy.ReadboyWearManager;
 
 /**
  * 时间、日期、天气（警报）、电话/未接提示泡、微聊/未读微聊信息、计步
@@ -68,6 +71,14 @@ public class WatchController extends BroadcastReceiver {
             "Jan", "Feb", "Mar", "Apr",
             "May", "Jun", "Jul", "Aug",
             "Sep", "Oct", "Nov", "Dec"};
+
+    public static final String[] WEEK_NAME_EN_LONG = new String[]{
+            "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+    public static final String MONTHS_NAME_EN_LONG[] = {
+            "January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"};
+
     private ArrayList<ImageView> mClassDisableIconViews = new ArrayList<ImageView>();
 
     Context mContext;
@@ -118,7 +129,9 @@ public class WatchController extends BroadcastReceiver {
     }
     private ArrayList<CallUnreadChangedCallback> mCallUnreadChangedCallback = new ArrayList<>();
     public void addCallUnreadChangedCallback(CallUnreadChangedCallback cb){
-        mCallUnreadChangedCallback.add(cb);
+        if (!mCallUnreadChangedCallback.contains(cb)){
+            mCallUnreadChangedCallback.add(cb);
+        }
         cb.onCallUnreadChanged(mMissCallCount);
     }
     public void removeCallUnreadChangedCallback(CallUnreadChangedCallback cb){
@@ -147,7 +160,9 @@ public class WatchController extends BroadcastReceiver {
     private ArrayList<ClassDisableChangedCallback> mClassDisableChangedCallback = new ArrayList<>();
     public void addClassDisableChangedCallback(ClassDisableChangedCallback cb){
         mClassDisableChangedCallback.add(cb);
-        boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();
+        /*boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();*/
+        ReadboyWearManager rwm = (ReadboyWearManager)mContext.getSystemService(Context.RBW_SERVICE);
+        boolean show = rwm.isClassForbidOpen();
         cb.onClassDisableChange(show);
     }
     public void removeClassDisableChangedCallback(ClassDisableChangedCallback cb){
@@ -163,7 +178,9 @@ public class WatchController extends BroadcastReceiver {
     }
 
     void classDisableChanged() {
-        boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();
+        /*boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();*/
+        ReadboyWearManager rwm = (ReadboyWearManager)mContext.getSystemService(Context.RBW_SERVICE);
+        boolean show = rwm.isClassForbidOpen();
         for(ClassDisableChangedCallback callback : mClassDisableChangedCallback) {
             callback.onClassDisableChange(show);
         }
@@ -434,9 +451,10 @@ public class WatchController extends BroadcastReceiver {
                 callback.onDateChange(year,month,day,week);
             }
         }else if(TextUtils.equals(action,Intent.ACTION_TIME_TICK)){
-            if(!TextUtils.isEmpty(mClassDisableData)){
+            /*if(!TextUtils.isEmpty(mClassDisableData)){
                 classDisableChanged();
-            }
+            }*/
+            classDisableChanged();
         }else if(TextUtils.equals(action,ACTION_STEP_ADD)){
             int steps = intent.getIntExtra("steps", 0);
             mStepCount = steps;

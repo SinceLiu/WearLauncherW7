@@ -36,6 +36,7 @@ import com.android.ims.ImsManager;
 import com.android.ims.ImsConfig;
 import android.os.SystemProperties;
 import android.telephony.SubscriptionManager;
+import android.app.readboy.ReadboyWearManager;
 
 public class NetworkController extends BroadcastReceiver {
     // debug
@@ -152,6 +153,8 @@ public class NetworkController extends BroadcastReceiver {
     private long mScreenOnTime = 0L;
     private int mDelayTime = 10 * 1000;
 
+    private ReadboyWearManager mRBManager;
+
     public interface SignalCluster {
         void setWifiIndicators(boolean visible, int strengthIcon,
                                String contentDescription);
@@ -183,6 +186,7 @@ public class NetworkController extends BroadcastReceiver {
         mConfig = Config.readConfig(context);
         ConnectivityManager cm = (ConnectivityManager)mContext.getSystemService(
                 Context.CONNECTIVITY_SERVICE);
+        mRBManager = (ReadboyWearManager)mContext.getSystemService(Context.RBW_SERVICE);
         mHasMobileDataFeature = cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE);
 
         mShowPhoneRSSIForData = res.getBoolean(R.bool.config_showPhoneRSSIForData);
@@ -427,6 +431,7 @@ public class NetworkController extends BroadcastReceiver {
             if(mFictitiousMobileSignalIconId == R.drawable.stat_sys_data_fully_connected_4g ||
                     mDataTypeIconId == R.drawable.stat_sys_data_fully_connected_4g){
                 mFictitiousMobileSignalIconId = R.drawable.stat_sys_data_fully_connected_4g;
+                refreshViews();
             }
         }
     }
@@ -914,7 +919,15 @@ public class NetworkController extends BroadcastReceiver {
 //            iconId = NetworkTypeUtils.VOLTEICON[slotId];
 //        }
         int iconId = R.drawable.stat_sys_hd;
-        return iconId;
+        if(mRBManager.getPersonalInfo() != null) {
+            int volteSwitchStatus = mRBManager.getPersonalInfo().getVolte();
+            if (volteSwitchStatus==0){
+                return 0;
+            }else if (volteSwitchStatus==1){
+                return iconId;
+            }
+        }
+        return 0;
     }
 
     private boolean isImsOverWfc(Intent intent) {

@@ -57,4 +57,16 @@
         android:layout_marginBottom="5px"
         android:src="@drawable/corner_line" />
 
+
+    <View
+        android:id="@+id/btn_left"
+        android:layout_width="110px"
+        android:layout_height="match_parent"
+        android:layout_gravity="left" />
+    <View
+        android:id="@+id/btn_right"
+        android:layout_width="110px"
+        android:layout_height="match_parent"
+        android:layout_gravity="right" />
+
 </com.readboy.wearlauncher.view.SwipeDismissLayout>

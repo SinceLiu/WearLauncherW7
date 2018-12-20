@@ -2,7 +2,6 @@ package com.readboy.wearlauncher.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -12,6 +11,8 @@ import com.readboy.wearlauncher.LauncherApplication;
 import com.readboy.wearlauncher.R;
 import com.readboy.wearlauncher.utils.Utils;
 import com.readboy.wearlauncher.utils.WatchController;
+
+import java.util.Calendar;
 
 /**
  * 时间、日期、天气（警报）、电话/未接提示泡、微聊/未读微聊信息、计步
@@ -82,6 +83,13 @@ public abstract class DialBaseLayout extends RelativeLayout implements View.OnCl
         mWatchController.addWeTalkUnreadChangedCallback(this);
     }
 
+    public void removeChangedCallback(){
+        mWatchController.removeDateChangedCallback(this);
+        mWatchController.removeCallUnreadChangedCallback(this);
+        mWatchController.removeWeTalkUnreadChangedCallback(this);
+        mWatchController.removeStepChangedCallback(this);
+    }
+
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -101,15 +109,13 @@ public abstract class DialBaseLayout extends RelativeLayout implements View.OnCl
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+//        addChangedCallback();
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mWatchController.removeDateChangedCallback(this);
-        mWatchController.removeCallUnreadChangedCallback(this);
-        mWatchController.removeWeTalkUnreadChangedCallback(this);
-        mWatchController.removeStepChangedCallback(this);
+//        removeChangedCallback();
     }
 
     @Override
@@ -141,5 +147,21 @@ public abstract class DialBaseLayout extends RelativeLayout implements View.OnCl
     @Override
     public void onWeTalkUnreadChanged(int count) {
 
+    }
+
+
+    protected void setDate(){
+        TextView mDateText = (TextView) findViewById(R.id.date_tvid);
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        /*int month = calendar.get(Calendar.MONTH) + 1;*/
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int week = (calendar.get(Calendar.DAY_OF_WEEK) - 1) % WatchController.WEEK_NAME_CN_LONG.length;
+        //String dateFormat = String.format("%d %s %d",day, WatchController.MONTHS_NAME_EN_SHORT[month],year);
+        String dateFormat = String.format("%d/%d  %s",month+1,day,WatchController.WEEK_NAME_CN_LONG[week]);
+        //String dateFormat = String.format("%s, %d  %s",
+        //        WatchController.WEEK_NAME_EN_LONG[week],day,WatchController.MONTHS_NAME_EN_LONG[month]);
+        mDateText.setText(dateFormat);
     }
 }

@@ -41,6 +41,11 @@
     <uses-permission android:name="android.permission.START_TASKS_FROM_RECENTS" />
 
     <!--<uses-feature android:name="android.hardware.type.watch"/>-->
+
+    <uses-permission android:name="android.permission.SHUTDOWN"></uses-permission>
+    <uses-permission android:name="android.permission.REBOOT"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"></uses-permission>
+
     <application
         android:name=".LauncherApplication"
         android:allowBackup="true"

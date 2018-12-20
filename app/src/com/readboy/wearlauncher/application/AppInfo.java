@@ -39,4 +39,9 @@ public class AppInfo {
 		Drawable drawable = iconCache.getFullResIcon(mResolveInfo);
 		mIcon = iconCache.drawableToBitmap(drawable,0);
 	}
+
+	@Override
+	public String toString() {
+		return "{AppName="+mAppName+" PackageName="+mPackageName+" ClassName="+mClassName+"}";
+	}
 }

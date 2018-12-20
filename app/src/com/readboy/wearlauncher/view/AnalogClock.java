@@ -16,10 +16,7 @@
 
 package com.readboy.wearlauncher.view;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -28,11 +25,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Handler;
-import android.text.format.DateUtils;
-import android.text.format.Time;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.readboy.wearlauncher.R;
@@ -40,7 +33,6 @@ import com.readboy.wearlauncher.R;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 
 /**
@@ -239,6 +231,7 @@ public class AnalogClock extends View {
     }
 
     public void setTimeRunning(){
+        removeCallbacks(mClockTick);
         post(mClockTick);
     }
 

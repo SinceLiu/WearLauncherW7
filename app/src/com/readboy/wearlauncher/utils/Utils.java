@@ -30,6 +30,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.readboy.wearlauncher.Launcher;
 import com.readboy.wearlauncher.LauncherApplication;
 import com.readboy.wearlauncher.R;
 import com.readboy.wearlauncher.dialog.ClassDisableDialog;
@@ -39,6 +40,10 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import android.app.readboy.PersonalInfo;
+import android.app.readboy.ReadboyWearManager;
+import android.app.readboy.IReadboyWearListener;
+
 public class Utils {
 	
 	//Settings.Global.AIRPLANE_MODE_TOGGLEABLE_RADIOS
@@ -47,6 +52,12 @@ public class Utils {
 	public static boolean isAirplaneModeOn(Context context) {
         return Settings.Global.getInt(context.getContentResolver(),
                 Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+    }
+
+    public static void checkAndDealWithAirPlanMode(Context context){
+        if (!isAirplaneModeOn(context)) return;
+        Intent intent = new Intent("com.readboy.settings.AirplaneModeReset");
+        context.startActivity(intent);
     }
 	
 	public static boolean isRadioAllowed(Context context, String type) {
@@ -108,9 +119,12 @@ public class Utils {
     public static void startActivity(Context context, String pkg, String cls){
         List<String> ableEnterList = Arrays.asList(context.getResources().getStringArray(
                 R.array.ableEnterList));
-        boolean isEnable = ((LauncherApplication)LauncherApplication.getApplication()).getWatchController().isNowEnable();
+        /*boolean isEnable = ((LauncherApplication)LauncherApplication.getApplication()).getWatchController().isNowEnable();*/
+        ReadboyWearManager rwm = (ReadboyWearManager)context.getSystemService(Context.RBW_SERVICE);
+        boolean isEnable = rwm.isClassForbidOpen();
         if(isEnable && !ableEnterList.contains(pkg)){
             ClassDisableDialog.showClassDisableDialog(context);
+            checkAndDealWithAirPlanMode(context);
             return;
         }
         try {

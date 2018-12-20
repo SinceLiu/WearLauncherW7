@@ -1,12 +1,6 @@
 package com.readboy.wearlauncher.notification;
 
 import android.app.Activity;
-import android.graphics.Rect;
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.support.annotation.Nullable;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -14,16 +8,25 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -42,10 +45,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import static com.readboy.wearlauncher.notification.NotificationMonitor.COMMAND_POSTED;
+import static com.readboy.wearlauncher.notification.NotificationMonitor.COMMAND_REMOVED;
 import static com.readboy.wearlauncher.notification.NotificationMonitor.EXTRA_COMMAND;
 import static com.readboy.wearlauncher.notification.NotificationMonitor.EXTRA_NOTIFICATION;
-import static com.readboy.wearlauncher.notification.NotificationMonitor.COMMAND_REMOVED;
-import static com.readboy.wearlauncher.notification.NotificationMonitor.COMMAND_POSTED;
 
 /**
  * Created by oubin on 2017/7/12.
@@ -90,7 +93,76 @@ public class NotificationActivity extends Activity {
         mNoDataView = findViewById(R.id.no_data_parent);
         mNoDataAnimation = (AnimationDrawable) findViewById(R.id.no_data_animation).getBackground();
         initRecyclerView();
+
+        findViewById(R.id.btn_left).setOnTouchListener(openFactoryModeOps);
+        findViewById(R.id.btn_right).setOnTouchListener(openFactoryModeOps);
     }
+
+/// add by cwj for open factory mode @{
+    int mMinCountdown = 5;
+    int mMaxCountdown = 8;
+    int mLeftCountdown = 0;
+    int mRightCountdown = 0;
+
+    private static final int RESET_FACTORY_COUNT = 1;
+    Handler mHandler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            switch (msg.what) {
+                case RESET_FACTORY_COUNT:
+                    initCount();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+    private void initCount(){
+        mLeftCountdown = 0;
+        mRightCountdown = 0;
+    }
+    private long resetTime = 1000;
+    private View.OnTouchListener openFactoryModeOps = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                switch (view.getId()) {
+                    case R.id.btn_left:
+                        mHandler.removeMessages(RESET_FACTORY_COUNT);
+                        mHandler.sendEmptyMessageDelayed(RESET_FACTORY_COUNT, resetTime);
+                        mLeftCountdown++;
+                        Log.d("FACTORY_COUNT", "mLeftCountdown:"+ mLeftCountdown
+                                +" mRightCountdown:"+ mRightCountdown);
+                        if (mLeftCountdown>mMaxCountdown)
+                            initCount();
+                        break;
+                    case R.id.btn_right:
+                        mHandler.removeMessages(RESET_FACTORY_COUNT);
+                        Log.d("FACTORY_COUNT", "mLeftCountdown:"+ mLeftCountdown
+                                +" mRightCountdown:"+ mRightCountdown);
+                        if (mLeftCountdown >=mMinCountdown&&mLeftCountdown<=mMaxCountdown) {
+                            mRightCountdown++;
+                            if (mRightCountdown==mMinCountdown) {
+                                openFactoryMode(NotificationActivity.this);
+                                initCount();
+                            } else {
+                                mHandler.sendEmptyMessageDelayed(RESET_FACTORY_COUNT, resetTime);
+                            }
+                        } else {
+                            initCount();
+                        }
+                        break;
+                }
+            }
+            return false;
+        }
+    };
+    //打开工厂模式
+    private static void openFactoryMode(Context context) {
+        Intent intent = new Intent("android.provider.Telephony.SECRET_CODE",
+                Uri.parse("android_secret_code://" + "83789"));
+        context.sendBroadcast(intent);
+    }
+/// @}
 
     private void initData() {
         Log.e(TAG, "initData: NotificationMonitor" + NotificationMonitor.getNotificationMonitor());

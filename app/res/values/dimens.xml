@@ -82,7 +82,7 @@
     <dimen name="negative_list_item_height">80px</dimen>
     <dimen name="negative_list_item_spacing">8px</dimen>
     <dimen name="negative_list_item_title_text_size">24px</dimen>
-    <dimen name="negative_list_item_icon_left">9px</dimen>
+    <dimen name="negative_list_item_icon_left">11px</dimen>
     <dimen name="negative_list_item_text_left">16px</dimen>
 
     <!-- mode type choice-->

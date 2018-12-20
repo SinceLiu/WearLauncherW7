@@ -12,7 +12,11 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -49,7 +53,7 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
     private ChangeIntentReceiver mReceiver = new ChangeIntentReceiver();
 
     public NegativeScreen(@NonNull Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public NegativeScreen(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -64,11 +68,11 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
         super.onFinishInflate();
         mScrollView = (ScrollView) findViewById(R.id.scrollView);
         OverScrollDecoratorHelper.setUpOverScroll(mScrollView);
-        findViewById(R.id.bell_bid).setOnClickListener(this);
-        findViewById(R.id.weather_bid).setOnClickListener(this);
-        findViewById(R.id.settings_bid).setOnClickListener(this);
-        mRingerModeView = (TextView) findViewById(R.id.ring_mode);
-        mWeatherModeView = (TextView) findViewById(R.id.weather_mode);
+        findViewById(R.id.ring).setOnClickListener(this);
+        findViewById(R.id.weather).setOnClickListener(this);
+        findViewById(R.id.settings).setOnClickListener(this);
+        mRingerModeView = (TextView) findViewById(R.id.ring);
+        mWeatherModeView = (TextView) findViewById(R.id.weather);
         //bluetooth
         initBluetoothController();
         //alarm
@@ -104,17 +108,19 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         int vid = v.getId();
-        switch (vid){
-            case R.id.bell_bid:
+        switch (vid) {
+            case R.id.ring:
                 setRingerMode();
                 //Utils.startActivity(mContext, "com.android.settings","com.android.settings.Settings$RingerModeSettingsActivity");
                 break;
-            case R.id.weather_bid:
-                Utils.startActivity(mContext, "com.readboy.wearweather","com.readboy.wearweather.MainActivity");
+            case R.id.weather:
+                Utils.startActivity(mContext, "com.readboy.wearweather", "com.readboy.wearweather.MainActivity");
                 break;
-            case R.id.settings_bid:
-                Utils.startActivity(mContext,"com.android.settings","com.android.settings.Settings");
+            case R.id.settings:
+                Utils.startActivity(mContext, "com.android.settings", "com.android.settings.Settings");
                 //Utils.startActivity(mContext,"com.qualcomm.qti.watchsettings","com.qualcomm.qti.watchsettings.SettingsActivity");
+                break;
+            default:
                 break;
         }
     }
@@ -124,69 +130,73 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (TextUtils.isEmpty(action)) {
-                return ;
+                return;
             }
             //int ringerMode = intent.getIntExtra(AudioManager.EXTRA_RINGER_MODE,AudioManager.RINGER_MODE_NORMAL);
             updateRingerMode();
         }
     }
 
-    public void moveToTop(){
-        if (mScrollView != null){
-            mScrollView.scrollTo(0,0);
+    public void moveToTop() {
+        if (mScrollView != null) {
+            mScrollView.scrollTo(0, 0);
         }
     }
 
-    private void updateRingerMode(){
+    private void updateRingerMode() {
         AudioManager audio = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         int ringerMode = audio.getRingerMode();
-        int vibrateAndRinging = Settings.System.getInt(mContext.getContentResolver(),Settings.System.VIBRATE_WHEN_RINGING,1);
-        if(ringerMode == 2 && vibrateAndRinging != 1){
+        int vibrateAndRinging = Settings.System.getInt(mContext.getContentResolver(), Settings.System.VIBRATE_WHEN_RINGING, 1);
+        if (ringerMode == 2 && vibrateAndRinging != 1) {
             ringerMode = 3;
         }
         int[] ringerModes = mContext.getResources().getIntArray(R.array.ringer_mode_integer);
         int index = 0;
-        for(;index < ringerModes.length; index++){
-            if(ringerMode == ringerModes[index]){
+        for (; index < ringerModes.length; index++) {
+            if (ringerMode == ringerModes[index]) {
                 break;
             }
         }
         String[] ringerText = mContext.getResources().getStringArray(R.array.ringer_mode_text);
-        mRingerModeView.setText(ringerText[index]);
-        mRingerModeView.setVisibility(View.VISIBLE);
+        Spannable ringModeStr = new SpannableString(mContext.getString(R.string.negative_item_bell)+"\n"+ringerText[index]);
+        ringModeStr.setSpan(new AbsoluteSizeSpan(15),mContext.getString(R.string.negative_item_bell).length(),ringModeStr.length(),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        ringModeStr.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.negative_subtitle_color_selector)),
+                mContext.getString(R.string.negative_item_bell).length(),ringModeStr.length(),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mRingerModeView.setText(ringModeStr);
     }
 
-    private void updateWeatherMode(){
+    private void updateWeatherMode() {
         String wea = getWeather();
-        if(!Utils.isEmpty(wea)){
+        if (!Utils.isEmpty(wea)) {
+            Spannable weatherModeStr = new SpannableString(mContext.getString(R.string.negative_item_weather)+"\n"+wea);
+            weatherModeStr.setSpan(new AbsoluteSizeSpan(15),mContext.getString(R.string.negative_item_weather).length(),weatherModeStr.length(),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            weatherModeStr.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.negative_subtitle_color_selector)),
+                    mContext.getString(R.string.negative_item_bell).length(),weatherModeStr.length(),Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             mWeatherModeView.setText(wea);
-            mWeatherModeView.setVisibility(View.VISIBLE);
-        }else {
-            mWeatherModeView.setVisibility(View.GONE);
         }
     }
 
-    private void setRingerMode(){
+    private void setRingerMode() {
         AudioManager audio = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         int ringerMode = audio.getRingerMode();
-        int vibrateAndRinging = Settings.System.getInt(mContext.getContentResolver(),Settings.System.VIBRATE_WHEN_RINGING,1);
-        if(ringerMode == 2 && vibrateAndRinging != 1){
+        int vibrateAndRinging = Settings.System.getInt(mContext.getContentResolver(), Settings.System.VIBRATE_WHEN_RINGING, 1);
+        if (ringerMode == 2 && vibrateAndRinging != 1) {
             ringerMode = 3;
         }
         int[] ringerModes = mContext.getResources().getIntArray(R.array.ringer_mode_integer);
         int index = 0;
-        for(;index < ringerModes.length; index++){
-            if(ringerMode == ringerModes[index]){
+        for (; index < ringerModes.length; index++) {
+            if (ringerMode == ringerModes[index]) {
                 break;
             }
         }
-        index = (index+1) % ringerModes.length;
+        index = (index + 1) % ringerModes.length;
         int settingMode = ringerModes[index];
-        if(settingMode == 3){
-            Settings.System.putInt(getContext().getContentResolver(),Settings.System.VIBRATE_WHEN_RINGING,0);
+        if (settingMode == 3) {
+            Settings.System.putInt(getContext().getContentResolver(), Settings.System.VIBRATE_WHEN_RINGING, 0);
             audio.setRingerMode(2);
-        }else{
-            Settings.System.putInt(getContext().getContentResolver(),Settings.System.VIBRATE_WHEN_RINGING,1);
+        } else {
+            Settings.System.putInt(getContext().getContentResolver(), Settings.System.VIBRATE_WHEN_RINGING, 1);
             audio.setRingerMode(settingMode);
         }
         updateRingerMode();
@@ -195,7 +205,7 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
     /**
      * 蓝牙
      */
-    private void  initBluetoothController(){
+    private void initBluetoothController() {
         ImageView bluetoothIconView = (ImageView) findViewById(R.id.btn_id_bluetooth);
         BluetoothController bluetoothEnabler = mApplication.getBluetoothController();
         bluetoothEnabler.addBluetoothIconView(bluetoothIconView);
@@ -205,16 +215,17 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
     /**
      * 闹钟
      */
-    private void  initAlarmController(){
+    private void initAlarmController() {
         ImageView alarmIconView = (ImageView) findViewById(R.id.btn_id_alarm);
         AlarmController alarmController = mApplication.getAlarmController();
         alarmController.addAlarmIconView(alarmIconView);
         alarmController.fireCallbacks();
     }
+
     /**
      * 网络 信号和Wi-Fi
      */
-    private  void initNetController(){
+    private void initNetController() {
         NetworkController controller = mApplication.getNetworkController();
         SignalClusterView signalCluster = (SignalClusterView) findViewById(R.id.signal_cluster);
         controller.addSignalCluster(signalCluster);
@@ -225,23 +236,23 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
     /**
      * GPS
      */
-    private  void initGPSController(){
+    private void initGPSController() {
         ImageView gpsIconView = (ImageView) findViewById(R.id.btn_id_gps);
         LocationControllerImpl controller = mApplication.getLocationControllerImpl();
         controller.addIconView(gpsIconView);
     }
 
-    private void initClassDisable(){
+    private void initClassDisable() {
         ImageView iconView = (ImageView) findViewById(R.id.btn_id_classdisable);
         WatchController watchController = mApplication.getWatchController();
         watchController.addClassDisableIconView(iconView);
     }
 
-    private String  getWeather(){
+    private String getWeather() {
         String weather = "";
         try {
-            Cursor c = mContext.getContentResolver().query(weatherUri,null,null,null,null);
-            if(c != null && c.moveToLast()){
+            Cursor c = mContext.getContentResolver().query(weatherUri, null, null, null, null);
+            if (c != null && c.moveToLast()) {
                 //Log.d("getWeather", Arrays.toString(c.getColumnNames()));
                 //c.getString(c.getColumnIndex("temperature"));
                 //c.getString(c.getColumnIndex("weather"));
@@ -250,10 +261,10 @@ public class NegativeScreen extends FrameLayout implements View.OnClickListener 
                         c.getString(c.getColumnIndex("temperature")),
                         c.getString(c.getColumnIndex("weather")));
             }
-            if(c != null){
+            if (c != null) {
                 c.close();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

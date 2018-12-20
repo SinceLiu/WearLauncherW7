@@ -25,7 +25,8 @@
     <string name="sim_name_telecom">中国电信</string>
 
     <string name="instruction_title">Hello !</string>
-    <string name="instruction_content">欢迎使用读书郎智能手表，手表需要获得以下权限：</string>
+    <!--<string name="instruction_content">欢迎使用读书郎智能手表，手表需要获得以下权限：</string>-->
+    <string name="instruction_content">欢迎使用读书郎电话手表，手表需要获得以下权限：</string>
     <string name="instruction_li">1. 拨打电话、发送短信\n2. 获取位置信息\n3. 访问网络\n4. 打开、关闭蓝牙</string>
 
     <string name="weather_template" translatable="false">%s°C %s</string>
@@ -187,4 +188,17 @@
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> year ago</item>
         <item quantity="other"><xliff:g example="2" id="count">%d</xliff:g> years ago</item>
     </plurals>
+
+    <string name="sim_bind_title">"温馨提示"</string>
+    <string name="sim_bind_driver_disable_default">"未使用该设备绑定的唯一SIM卡，请更换SIM卡后再使用!"</string>
+    <string name="sim_bind_not_cmcc">"手表仅支持移动SIM卡，请关机后更换SIM卡绑定。"</string>
+    <!--<string name="sim_bind_tip">"手表需要绑定唯一SIM卡，绑定后将无法更换，您可以选择\n ● 绑定此SIM卡%s\n ● 关机后更换SIM卡使用\n"</string>-->
+    <!--<string name="sim_bind_tip">"手表需要绑定唯一SIM卡，绑定后将无法更换，您可以选择\n • 绑定此SIM卡%s\n • 关机后更换SIM卡使用\n"</string>-->
+    <string name="sim_bind_tip_top">"手表需要绑定唯一SIM卡，绑定后将无法更换，您可以选择"</string>
+    <string name="sim_bind_tip_item_1">" 绑定此SIM卡"</string>
+    <string name="sim_bind_tip_item_2">" 关机后更换SIM卡使用"</string>
+    <string name="sim_bind_shut_down">"关机"</string>
+    <string name="sim_bind_sure_bind">"确认绑定"</string>
+    <string name="sim_bind_succ_tip">"绑定成功"</string>
+    <string name="sim_bind_fail_tip">"绑定失败，请重试"</string>
 </resources>
