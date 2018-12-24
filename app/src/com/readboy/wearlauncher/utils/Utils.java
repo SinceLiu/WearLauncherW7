@@ -30,7 +30,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.readboy.wearlauncher.Launcher;
 import com.readboy.wearlauncher.LauncherApplication;
 import com.readboy.wearlauncher.R;
 import com.readboy.wearlauncher.dialog.ClassDisableDialog;
@@ -39,10 +38,6 @@ import com.readboy.wearlauncher.view.DialBaseLayout;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-
-import android.app.readboy.PersonalInfo;
-import android.app.readboy.ReadboyWearManager;
-import android.app.readboy.IReadboyWearListener;
 
 public class Utils {
 	
@@ -119,9 +114,7 @@ public class Utils {
     public static void startActivity(Context context, String pkg, String cls){
         List<String> ableEnterList = Arrays.asList(context.getResources().getStringArray(
                 R.array.ableEnterList));
-        /*boolean isEnable = ((LauncherApplication)LauncherApplication.getApplication()).getWatchController().isNowEnable();*/
-        ReadboyWearManager rwm = (ReadboyWearManager)context.getSystemService(Context.RBW_SERVICE);
-        boolean isEnable = rwm.isClassForbidOpen();
+        boolean isEnable = ((LauncherApplication)LauncherApplication.getApplication()).getWatchController().isNowEnable();
         if(isEnable && !ableEnterList.contains(pkg)){
             ClassDisableDialog.showClassDisableDialog(context);
             checkAndDealWithAirPlanMode(context);

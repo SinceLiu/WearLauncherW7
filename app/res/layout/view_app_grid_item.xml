@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@android:color/transparent">
+    android:gravity="center">
+    <!--android:background="@android:color/transparent">-->
 
     <com.readboy.wearlauncher.view.IconTextView
         android:id="@+id/app_icon_tvid"
@@ -16,19 +16,19 @@
         android:drawablePadding="2px"
         android:gravity="center_horizontal"/>
 
-    <com.readboy.wearlauncher.view.IconImageView
-        android:id="@+id/app_icon_ivid"
-        android:layout_width="@dimen/app_list_icon_width"
-        android:layout_height="@dimen/app_list_icon_width"
-        android:scaleType="centerCrop"
-        android:visibility="gone"/>
-    <TextView
-        android:id="@+id/app_name_tvid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#ffffffff"
-        android:gravity="center"
-        android:maxLines="1"
-        android:visibility="gone"/>
+    <!--<com.readboy.wearlauncher.view.IconImageView-->
+        <!--android:id="@+id/app_icon_ivid"-->
+        <!--android:layout_width="@dimen/app_list_icon_width"-->
+        <!--android:layout_height="@dimen/app_list_icon_width"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:visibility="gone"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/app_name_tvid"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textColor="#ffffffff"-->
+        <!--android:gravity="center"-->
+        <!--android:maxLines="1"-->
+        <!--android:visibility="gone"/>-->
 </LinearLayout>
