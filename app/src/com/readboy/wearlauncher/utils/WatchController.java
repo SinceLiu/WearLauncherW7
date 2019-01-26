@@ -31,6 +31,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import android.app.readboy.ReadboyWearManager;
+
 /**
  * 时间、日期、天气（警报）、电话/未接提示泡、微聊/未读微聊信息、计步
  * Created by Administrator on 2017/6/13.
@@ -41,7 +43,7 @@ public class WatchController extends BroadcastReceiver {
     //class disable
     public static final String TAG_CLASS_DISABLED = "class_disabled";
     public static final String TAG_CLASS_DISABLED_TIME = "class_disable_time";
-    public static final String READBOY_ACTION_CLASS_DISABLE_CHANGED = "readboy.acion.CLASS_DISABLE_CHANGED";
+    public static final String READBOY_ACTION_CLASS_DISABLE_CHANGED = "readboy.action.CLASS_DISABLE_CHANGED";
     private static final SimpleDateFormat mDateFormat = new SimpleDateFormat("HH:mm");
     //Weather
     public static final String ACTION_WEATHER_RESULT = "com.readboy.wearlauncher.weather.WEATHER_RESULT";
@@ -157,7 +159,9 @@ public class WatchController extends BroadcastReceiver {
     private ArrayList<ClassDisableChangedCallback> mClassDisableChangedCallback = new ArrayList<>();
     public void addClassDisableChangedCallback(ClassDisableChangedCallback cb){
         mClassDisableChangedCallback.add(cb);
-        boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();
+        /*boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();*/
+        ReadboyWearManager rwm = (ReadboyWearManager)mContext.getSystemService(Context.RBW_SERVICE);
+        boolean show = rwm.isClassForbidOpen();
         cb.onClassDisableChange(show);
     }
     public void removeClassDisableChangedCallback(ClassDisableChangedCallback cb){
@@ -173,7 +177,9 @@ public class WatchController extends BroadcastReceiver {
     }
 
     void classDisableChanged() {
-        boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();
+        /*boolean show = !TextUtils.isEmpty(mClassDisableData) && isNowEnable();*/
+        ReadboyWearManager rwm = (ReadboyWearManager)mContext.getSystemService(Context.RBW_SERVICE);
+        boolean show = rwm.isClassForbidOpen();
         for(ClassDisableChangedCallback callback : mClassDisableChangedCallback) {
             callback.onClassDisableChange(show);
         }
@@ -444,9 +450,10 @@ public class WatchController extends BroadcastReceiver {
                 callback.onDateChange(year,month,day,week);
             }
         }else if(TextUtils.equals(action,Intent.ACTION_TIME_TICK)){
-            if(!TextUtils.isEmpty(mClassDisableData)){
+            /*if(!TextUtils.isEmpty(mClassDisableData)){
                 classDisableChanged();
-            }
+            }*/
+            classDisableChanged();
         }else if(TextUtils.equals(action,ACTION_STEP_ADD)){
             int steps = intent.getIntExtra("steps", 0);
             mStepCount = steps;

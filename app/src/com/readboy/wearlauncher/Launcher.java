@@ -48,6 +48,7 @@ import com.readboy.wearlauncher.battery.BatteryController;
 import com.readboy.wearlauncher.dialog.ClassDisableDialog;
 import com.readboy.wearlauncher.dialog.InstructionsDialog;
 import com.readboy.wearlauncher.notification.NotificationActivity;
+import com.readboy.wearlauncher.utils.ClassForbidUtils;
 import com.readboy.wearlauncher.utils.Utils;
 import com.readboy.wearlauncher.utils.WatchController;
 import com.readboy.wearlauncher.view.DaialParentLayout;
@@ -179,7 +180,6 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
         mViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -293,11 +293,12 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
         Log.e("cwj", "onClassDisableChange: show=" + show);
         if (bIsClassDisable != show) {
             bIsClassDisable = show;
-            ReadboyWearManager rwm = (ReadboyWearManager) Launcher.this.getSystemService(Context.RBW_SERVICE);
-            rwm.setClassForbidOpen(show);
-            if (bIsClassDisable) {
-                if (needGoToHOme(Launcher.this, 0)) {
-                    startActivity(new Intent(Launcher.this, Launcher.class));
+            ClassForbidUtils.handleClassForbid(bIsClassDisable, Launcher.this);
+//            ReadboyWearManager rwm = (ReadboyWearManager)Launcher.this.getSystemService(Context.RBW_SERVICE);
+//            rwm.setClassForbidOpen(show);
+            if(bIsClassDisable){
+                if(needGoToHOme(Launcher.this,0)){
+                    startActivity(new Intent(Launcher.this,Launcher.class));
                 }
                 mHandler.postDelayed(new Runnable() {
                     @Override
@@ -595,7 +596,9 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
             }
             return true;
         } else if (vDistance < -mTouchSlopSquare / 2 && bVerticalMove /*&& mViewPagerScrollState == ViewPager.SCROLL_STATE_IDLE*/) {
-            boolean isEnable = ((LauncherApplication) LauncherApplication.getApplication()).getWatchController().isNowEnable();
+            /*boolean isEnable = ((LauncherApplication) LauncherApplication.getApplication()).getWatchController().isNowEnable();*/
+            ReadboyWearManager rwm = (ReadboyWearManager)Launcher.this.getSystemService(Context.RBW_SERVICE);
+            boolean isEnable = rwm.isClassForbidOpen();
             if (isEnable) {
                 ClassDisableDialog.showClassDisableDialog(Launcher.this);
                 Utils.checkAndDealWithAirPlanMode(Launcher.this);
@@ -955,8 +958,10 @@ public class Launcher extends FragmentActivity implements BatteryController.Batt
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        boolean isEnable = ((LauncherApplication)
-                                LauncherApplication.getApplication()).getWatchController().isNowEnable();
+                        /*boolean isEnable = ((LauncherApplication)
+                                LauncherApplication.getApplication()).getWatchController().isNowEnable();*/
+			            ReadboyWearManager rwm = (ReadboyWearManager)Launcher.this.getSystemService(Context.RBW_SERVICE);
+			            boolean isEnable = rwm.isClassForbidOpen();
                         Log.e("cwj", "needGoToHOme isEnable " + isEnable);
                         if (isEnable) {
                             startActivity(new Intent(Launcher.this, Launcher.class));

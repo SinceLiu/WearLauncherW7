@@ -231,7 +231,6 @@ public class NetworkController extends BroadcastReceiver {
         filter.addAction(ConnectivityManager.INET_CONDITION_ACTION);
         filter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
         filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-
         filter .addAction(ImsManager.ACTION_IMS_STATE_CHANGED);
 
         mWimaxSupported = mContext.getResources().getBoolean(R.bool.config_wimaxEnabled);
@@ -965,7 +964,7 @@ public class NetworkController extends BroadcastReceiver {
                 ServiceState.STATE_OUT_OF_SERVICE);
         int phoneId = intent.getIntExtra(ImsManager.EXTRA_PHONE_ID,
                 SubscriptionManager.INVALID_PHONE_INDEX);
-        mImsSubId = SubscriptionManager.getSubIdUsingPhoneId(phoneId);;
+        mImsSubId = SubscriptionManager.getSubIdUsingPhoneId(phoneId);
         Log.d(TAG,"handleIMSAction mImsRegState = " + mImsRegState + " phoneId = " + phoneId
                 + "mImsSubId = "+ mImsSubId);
         int iconId = 0;
